@@ -26,7 +26,7 @@
 
   <ul>
     <li>
-      <a href="whatsapp://send?text=https://mortuz.github.com/mortuz?=The text to share!" data-action="share/whatsapp/share">
+      <a href="whatsapp://send?text=https://mortuz.github.com/mortuz?=The text to share!" class="js-whatsapp-share" data-action="share/whatsapp/share">
         <i class="fa fa-whatsapp my-float"></i>
       </a>
     </li>
@@ -68,6 +68,12 @@
       el.innerHTML = name;
       el.setAttribute('data-text', name);    
 
+     var whatsAppShare = document.querySelector('.js-whatsapp-share');
+
+     whatsAppShare.addEventListener('click', function(e) {
+       e.preventDeault();
+        window.location = 'whatsapp://send?text=https://mortuz.github.com/mortuz?=name';
+     });
   </script>
 </body>
 </html>
